@@ -19,10 +19,12 @@ class DetailActivity : AppCompatActivity() {
     private val status: TextView by lazy { findViewById(R.id.tv_status) }
     private val okButton: MaterialButton by lazy { findViewById(R.id.mbt_details_ok) }
 
-    val notificationManager = ContextCompat.getSystemService(
-        this,
-        NotificationManager::class.java
-    ) as NotificationManager
+    private val notificationManager: NotificationManager by lazy {
+        ContextCompat.getSystemService(
+            this@DetailActivity,
+            NotificationManager::class.java
+        ) as NotificationManager
+    }
 
     companion object {
         const val NOTIFICATION_BODY = "status"
