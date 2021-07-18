@@ -1,11 +1,16 @@
 <resources>
-    <string name="app_name">ND940C3-Project</string>
+    <string name="app_name">Load App</string>
     <string name="app">Download files from Internet</string>
     <string name="action_settings">Settings</string>
 
     <!-- Notification -->
+    <string name="load_app_channel_id" translatable="false">load_app_channel</string>
+    <string name="load_app_channel_name" translatable="false">Load</string>
+    <string name="load_app_channel_description" translatable="false">Repository download</string>
+
+
     <string name="notification_title">Udacity: Android Kotlin Nanodegree </string>
-    <string name="notification_description">The Project 3 repository is downloaded</string>
+    <string name="notification_description">Download %s</string>
     <string name="notification_button">See changes</string>
 
     <!-- LoadingButton -->

@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
             }
+            download()
         }
     }
 
@@ -123,7 +124,8 @@ class MainActivity : AppCompatActivity() {
                                     applicationContext = application,
                                     notificationBody = NotificationBody(
                                         title = title,
-                                        status = "Success"
+                                        status = "Success",
+                                        description = "success"
                                     )
                                 )
                                 cursor.close()
@@ -133,7 +135,8 @@ class MainActivity : AppCompatActivity() {
                                     applicationContext = application,
                                     notificationBody = NotificationBody(
                                         title = title,
-                                        status = "Fail"
+                                        status = "Fail",
+                                        description = "failure"
                                     )
                                 )
                                 cursor.close()
