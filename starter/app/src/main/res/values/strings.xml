@@ -8,7 +8,6 @@
     <string name="load_app_channel_name" translatable="false">Load</string>
     <string name="load_app_channel_description" translatable="false">Repository download</string>
 
-
     <string name="notification_title">Udacity: Android Kotlin Nanodegree </string>
     <string name="notification_description">Download %s</string>
     <string name="notification_button">See changes</string>
@@ -32,4 +31,12 @@
 
     <!-- DetailActivity -->
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="file_name">File name:</string>
+    <string name="status">Status:</string>
+    <string name="ok">OK</string>
+
+    <!-- Common -->
+    <string name="success">Success</string>
+    <string name="fail">Fail</string>
+    <string name="failure">Failure</string>
 </resources>

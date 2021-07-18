@@ -124,8 +124,8 @@ class MainActivity : AppCompatActivity() {
                                     applicationContext = application,
                                     notificationBody = NotificationBody(
                                         title = title,
-                                        status = "Success",
-                                        description = "success"
+                                        status = getString(R.string.success),
+                                        description = getString(R.string.success)
                                     )
                                 )
                                 cursor.close()
@@ -135,8 +135,8 @@ class MainActivity : AppCompatActivity() {
                                     applicationContext = application,
                                     notificationBody = NotificationBody(
                                         title = title,
-                                        status = "Fail",
-                                        description = "failure"
+                                        status = getString(R.string.fail),
+                                        description = getString(R.string.failure)
                                     )
                                 )
                                 cursor.close()
