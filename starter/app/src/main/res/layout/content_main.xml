@@ -82,10 +82,12 @@
             android:textSize="@dimen/default_text_size" />
     </RadioGroup>
 
-    <com.udacity.LoadingButton
+    <com.udacity.customview.LoadingButton
         android:id="@+id/custom_button"
         android:layout_width="@dimen/width_0"
         android:layout_height="@dimen/height_60"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start" />

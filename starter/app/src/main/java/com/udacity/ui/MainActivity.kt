@@ -8,7 +8,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.net.Uri
 import android.os.Bundle
-import android.widget.RadioButton
+import android.os.Handler
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,9 +24,6 @@ class MainActivity : AppCompatActivity() {
 
     private val toolbar: Toolbar by lazy { findViewById(R.id.toolbar) }
     private val radioGroup: RadioGroup by lazy { findViewById(R.id.rg_download_options) }
-    private val glideOption: RadioButton by lazy { findViewById(R.id.rb_glide_option) }
-    private val loadAppOption: RadioButton by lazy { findViewById(R.id.rb_load_app_option) }
-    private val retrofitOption: RadioButton by lazy { findViewById(R.id.rb_retrofit_option) }
     private val loadingButton: LoadingButton by lazy { findViewById(R.id.custom_button) }
 
     private val notificationManager: NotificationManager by lazy {
@@ -95,7 +92,6 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
             }
-            download()
         }
     }
 
@@ -120,6 +116,9 @@ class MainActivity : AppCompatActivity() {
                             val title = cursor.getString(cursor.getColumnIndex(DownloadManager.COLUMN_TITLE))
                             if (status == DownloadManager.STATUS_SUCCESSFUL) {
                                 loadingButton.setState(ButtonState.Completed)
+                                Handler().postDelayed({
+                                    loadingButton.setState(ButtonState.Clicked)
+                                }, 3000)
                                 notificationManager.sendNotification(
                                     applicationContext = application,
                                     notificationBody = NotificationBody(
@@ -150,8 +149,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun download() {
         if (radioGroup.checkedRadioButtonId == EMPTY_SELECTION) {
-            loadingButton.setState(ButtonState.Error)
             Toast.makeText(this@MainActivity, getString(R.string.empty_option), Toast.LENGTH_LONG).show()
+            loadingButton.setState(ButtonState.Error)
         } else {
             loadingButton.setState(ButtonState.Loading)
             val request = DownloadManager.Request(Uri.parse(downloadUrl))
